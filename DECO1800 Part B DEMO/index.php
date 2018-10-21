@@ -15,12 +15,22 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 		<meta charset="utf-8">
 		<title>The Lecture Homepage</title>
 		<link rel="stylesheet" href="css/index.css">
-		<meta name="author" content="Team NWD">
+		<meta name="author" content="Allen">
 		<meta name="description" content="This page is about...">
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/js.js"></script>
 		
 	</head>
+	<style>
+		.btn_div{
+			width: 12%;
+			height: 100px;
+			right: 8%;
+			top: 256px;
+			position: absolute;
+			animation: bounceIn 1.5s;
+		}
+	</style>
 	<body>
 	<div id="header">
 		<table>
@@ -29,12 +39,13 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 		<td><h1>Lecture Room</h1></td>
 		</tr>
 		</table>
-		</div>
+	</div>
+		 
+	
 		<div id="container">
-			<div id="games">
-				<a href="/games.php">
-				<button class="gamesbtn">Games</button>
-			</div>
+			<a title="take me away">
+				<div class="absolute btn_div" id="shell" title="take me away"></div>
+			</a>
 			<div id="boardImg">
 				<a id="startBtn" onclick="plusSlides(1)">Start</a>	
 				
@@ -62,9 +73,7 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 
 				<nav class="close-button">
 					<a href="index.html">Close</a>
-				</nav>
-
-				
+				</nav>		
 
 			</section>
 		</div>
@@ -80,8 +89,7 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 					</iframe>	
 				</div>
 			</section>
-		</div>
-		
+		</div>		
 		<div id="prvious-board-popup">
 			<section class="prviousdrawingboard">
 				<nav class="close-button">
@@ -89,4 +97,7 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 				</nav>
 			</section>
 		</div>		
+		
+	</body>
+
 </html>
