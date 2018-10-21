@@ -15,7 +15,7 @@ $activePage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 		<meta charset="utf-8">
 		<title>The Lecture Homepage</title>
 		<link rel="stylesheet" href="css/index.css">
-		<meta name="author" content="Allen">
+		<meta name="author" content="Team B - NWD">
 		<meta name="description" content="This page is about...">
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/js.js"></script>
