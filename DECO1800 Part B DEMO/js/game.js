@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#reset, #finish").css("visibility", "hidden");
+	$("#reset, #finish, #previous").css("display", "none");
 	$.ajax({
 		type: "GET",
 		url: "mysql_connect.php?fun=read",
@@ -18,25 +18,45 @@ $(document).ready(function() {
 			$("tbody").html(tr);
 		}
 	});
-	var num,
-		i = 1,
-		score = 0;
+	var score = 0;
 	count = questions.length;
 	answer_question(0);
+	answer = [];
 	$("#next").on("click", function(e) {
 		var number = parseInt($("#number").val());
-		var num = number - 1;
 		var value = $("[name=optradio]:checked").val();
-		if (value == questions[num].correctAnswer) score++;
+		answer.push(value);
 		if (number == count) {
-			$("#reset, #finish").css("visibility", "visible");
-			$("#next").css("visibility", "hidden");
+			$("#reset, #finish").css("display", "inline-block");
+			$("#next").css("display", "none");
+			for (var i = 0; i < count; i++) {
+				if (questions[i].correctAnswer == answer[i]) {
+					score++;
+				}
+			}
+
 			$("#score_num").val(score);
 			$(".modal-body h4").html("Your score:" + score);
 			$("#myModal").modal("show");
 		} else {
 			answer_question(parseInt(number));
+			$("#previous").css("display", "inline-block");
 		}
+	});
+	$("#previous").on("click", function(e) {
+		var number = parseInt($("#number").val());
+		var val = number - 2;
+		$("#next").css("display", "inline-block");
+		if (val > 0) {
+			$("#reset, #finish").css("display", "none");
+			answer_question(val);
+		} else {
+			answer_question(val);
+
+			$("#previous").css("display", "none");
+		}
+
+		checked(val);
 	});
 	$("#save").on("click", function(e) {
 		var score = $("#score_num").val();
@@ -55,7 +75,7 @@ $(document).ready(function() {
 
 	function answer_question(i) {
 		var a = i + 1;
-		$(".qn_num").html("Question " + a + ":");
+		$(".que_num").html("Question" + a + ":");
 		$("#number").val(a);
 		$(".question").html(questions[i].question);
 		var html = "";
@@ -70,5 +90,12 @@ $(document).ready(function() {
 			html += "</div>";
 		}
 		$(".answer").html(html);
+	}
+	function checked(val) {
+		$("input[name=optradio][value=" + parseInt(answer[val]) + "]").attr(
+			"checked",
+			"checked"
+		);
+		answer.splice(-1, 1);
 	}
 });

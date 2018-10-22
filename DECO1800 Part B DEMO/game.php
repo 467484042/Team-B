@@ -10,7 +10,7 @@
           <link rel="stylesheet" href="css/game.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <script src="js/qnBank.js"></script>
+          <script src="js/qnbank.js"></script>
           <script src="js/game.js"></script>
         </head>    
 <body style="background:#1e90ff"> 
@@ -23,27 +23,27 @@
         </div>       
         <div class="que">
             <div class="row">
-                <h3 class="qn_num">Question 1: </h3>
+                <h3 class="que_num"></h3>
             </div>
-            <h4 class="question">What is 2*5?</h4>
+            <h4 class="question"></h4>
             <input type="hidden" id="number">
             <div class="answer">               
             </div>
         </div>
         <div class="row result_btn">
-            <button class="btn btn-default" id="prev">Prev></button>
-            <button class="btn btn-default" id="next">Next</button>
+            <button class="btn btn-default" id="previous">Previous</button>
+            <button class="btn btn-default" id="next">Next</button>  
             <button type="button" class="btn btn-success"  onclick="window.location.reload(true);" id="reset" >Reset</button>
-            <button type="button" class="btn btn-default" onclick="window.close();" id="finish">Finish</button>
-        </div>
+            <button type="button" class="btn btn-default" onclick="window.close();" id="finish">Finish</button>          
+        </div>       
         <div class="row" style="margin:30px;color:#fff">
             <h2>Rank </h2>
             <table class="table" >
                 <thead>
                 <tr>
                     <th>Rank</th>
-                    <th>Name</th>
-                    <th>Score</th>
+                    <th>name</th>
+                    <th>score</th>
                 </tr>
                 </thead>
                 <tbody>                
