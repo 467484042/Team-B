@@ -7,12 +7,16 @@
     } else if($_GET["fun"]=="read"){
         read();
     }
+	
+	// $mysqli = mysqli_connect("127.0.0.1", "u2bic_jodi", "!QAZ2wsx#EDC", "u2bic_quiz_score"); for online
     function insert($param){
         $mysqli = mysqli_connect("127.0.0.1", "root", "root", "quiz_score");
         $date=date("Y-m-d H:i");
         $result = $mysqli->query("insert INTO score(name,score,time ) values ('".$param["name"]."', '".$param['score']."','".$date."')");
         echo json_encode($result) ;
     }
+	
+	// $mysqli = mysqli_connect("127.0.0.1", "u2bic_jodi", "!QAZ2wsx#EDC", "u2bic_quiz_score"); for online
     function read(){
         $mysqli = mysqli_connect("127.0.0.1", "root", "root", "quiz_score");
         $result = $mysqli->query("SELECT * FROM score ORDER BY  score DESC limit 10");

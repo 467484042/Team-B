@@ -10,7 +10,7 @@
           <link rel="stylesheet" href="css/game.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <script src="js/qnbank.js"></script>
+          <script src="js/qnBank.js"></script>
           <script src="js/game.js"></script>
         </head>    
 <body style="background:#1e90ff"> 

@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 	function answer_question(i) {
 		var a = i + 1;
-		$(".que_num").html("Question" + a + ":");
+		$(".que_num").html("Question " + a + ":");
 		$("#number").val(a);
 		$(".question").html(questions[i].question);
 		var html = "";
